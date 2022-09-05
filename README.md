@@ -5,7 +5,7 @@ Portfolio created for NLP Class at UTD
 This [document](Overview_of_NLP.pdf) includes a one page introduction of NLP as well as my objective for taking this NLP course.
 
 ## Assignment 1: Text Processor
-This [program](src/Homework1/Text_Processor.py) processes employee information list file formatted in the order of last, first, middle initial, id, and office phone to a standardized format by creating an object for each employee and corrections from the user running the program. The output is a list of employee information in standardized format.
+This [program](https://github.com/tqyn117/NLP-Portfolio/blob/main/src/Homework1/Text_Processor.py) processes employee information list file formatted in the order of last, first, middle initial, id, and office phone to a standardized format by creating an object for each employee and corrections from the user running the program. The output is a list of employee information in standardized format.
 
 In order to run it, you must pass in the filepath to the file to be processed as a command-line argument for sys.argv. For example, you can run the project on powershell by executing the following command: python.exe Text_Processor.py data/data.csv
 Here, data/data.csv is the filepath to the file to be processed.

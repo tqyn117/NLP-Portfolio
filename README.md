@@ -15,4 +15,4 @@ In my opinion, Python strengths include but not limited to its library support a
 From this first assignment, I learned how to setup my first Python project. Additionally, I got to properly practice Python's syntax and behavior for the first time. Using regex served as a good review for me on how to regulate data format.
 
 ## Assignment 2: Exploring NLTK
-Jupyter Notebook and Comments can be found in this [PDF](https://github.com/tqyn117/NLP-Portfolio/blob/main/src/Homework2/Exploring_NLTK_Jupyter_Notebook.pdf).
+Jupyter Notebook and Comments about my findings can be found in this [PDF](https://github.com/tqyn117/NLP-Portfolio/blob/main/src/Homework2/Exploring_NLTK_Jupyter_Notebook.pdf).

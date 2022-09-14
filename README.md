@@ -1,4 +1,4 @@
-# By Quy Giang
+### By Quy Giang
 Portfolio created for NLP Class at UTD
  
 ## Overview of NLP

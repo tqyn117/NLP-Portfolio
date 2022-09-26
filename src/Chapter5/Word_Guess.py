@@ -38,7 +38,6 @@ def guessing_game(wordlist):
     score = 5
     word = wordlist[randint(0, 49)]
     board = '_' * len(word)
-    print(word)
     # Start game
     print("Let's play a word guessing game!")
     while score >= 0:
@@ -48,8 +47,7 @@ def guessing_game(wordlist):
             print("Current score: ", score, "\n")
             word = wordlist[randint(0, 49)]
             board = '_' * len(word)
-            print(word)
-
+            print("Guess another word")
         # Display the board of guesses and "_"
         print(' '.join(board))
 

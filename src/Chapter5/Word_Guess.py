@@ -36,18 +36,23 @@ def preprocessing(tokens):
 def guessing_game(wordlist):
     seed(1234)
     score = 5
-    guess = ''
     word = wordlist[randint(0, 49)]
     board = '_' * len(word)
+    print(word)
     # Start game
     print("Let's play a word guessing game!")
-    while score > 0 or guess != '!':
-        print(' '.join(board))
-        # If player guessed all the word's character
+    while score >= 0:
+        # If player guessed all the word's character continue onto the next word
         if '_' not in board:
             print("You solved it!\n")
-            print("Current score: ", score)
-            break
+            print("Current score: ", score, "\n")
+            word = wordlist[randint(0, 49)]
+            board = '_' * len(word)
+            print(word)
+
+        # Display the board of guesses and "_"
+        print(' '.join(board))
+
         guess = input("Guess a letter:")
         # If player guessed a character that is in the word
         if guess in word:
@@ -59,10 +64,16 @@ def guessing_game(wordlist):
                 if guess == word[i]:
                     word = word[:i] + '*' + word[i+1:]
                     board = board[:i] + guess + board[i+1:]
-        # If player guessed a character that is not in the word
+        # Exit the game loop if player input !
+        elif guess == '!':
+            break;
+        # If player guessed a character that is not in the word and fail if score is below 0
         else:
             score -= 1
-            print("Sorry, guess again. Score is ", score)
+            if score < 0:
+                print("Game over!")
+            else:
+                print("Sorry, guess again. Score is ", score)
 
 
 if __name__ == '__main__':

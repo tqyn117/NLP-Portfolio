@@ -19,13 +19,17 @@ def preprocessing(tokens):
     # Lowercase, alpha only, not in stopword list, and length > 5
     tokens = [t.lower() for t in tokens if t.isalpha() if t not in stop_words if len(t) > 5]
     wnl = WordNetLemmatizer()
+    # Get list of lemmas from tokens and then get unique lemmas
     lemmas = [wnl.lemmatize(t) for t in tokens]
     lemmas_unique = set(lemmas)
+    # Perform POS tagging where we begin to separate nouns from other tags
     tags = nltk.pos_tag(lemmas_unique)
     print("First 20 tagged items: ", tags[:20])
+    # Filter the list of lemmas with noun tags only (this includes NN, NNS, NNP, and NNPS)
     lemmas_noun = [t for t in tags if t[1] == "NN" or t[1] == "NNS" or t[1] == "NNP" or t[1] == "NNPS"]
     print("Num of tokens: ", len(tokens))
     print("Num of lemmas_noun: ", len(lemmas_noun))
+
     return tokens, lemmas_noun
 
 
@@ -34,23 +38,28 @@ def guessing_game(wordlist):
     score = 5
     guess = ''
     word = wordlist[randint(0, 49)]
-    print(word)
     board = '_' * len(word)
+    # Start game
     print("Let's play a word guessing game!")
     while score > 0 or guess != '!':
         print(' '.join(board))
+        # If player guessed all the word's character
         if '_' not in board:
             print("You solved it!\n")
             print("Current score: ", score)
             break
         guess = input("Guess a letter:")
+        # If player guessed a character that is in the word
         if guess in word:
             score += 1
             print("Right! Score is ", score)
+            # Replaces "_" with correct character on guess board while removing
+            #   from the word to ensure no duplicate guess
             for i in range(len(word)):
                 if guess == word[i]:
                     word = word[:i] + '*' + word[i+1:]
                     board = board[:i] + guess + board[i+1:]
+        # If player guessed a character that is not in the word
         else:
             score -= 1
             print("Sorry, guess again. Score is ", score)
@@ -64,10 +73,15 @@ if __name__ == '__main__':
         fp = open(pathlib.Path.cwd().joinpath(sys.argv[1]), encoding='utf-8-sig', mode='r')
         raw_text = fp.read()
         tokens = word_tokenize(raw_text)
+
         lexical_diversity(tokens)
+
         tokens, nouns = preprocessing(tokens)
+
+        # Using the tokens list and nouns list to create a dictionary of 50 nouns with the highest word count
         counts = {t[0]: tokens.count(t[0]) for t in nouns}
         sorted_counts = sorted(counts.items(), key=lambda x: x[1], reverse=True)
         wordlist = sorted_counts[:50]
         wordlist = [n[0] for n in wordlist]
+
         guessing_game(wordlist)

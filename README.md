@@ -22,3 +22,6 @@ This [program](https://github.com/tqyn117/NLP-Portfolio/blob/main/src/Chapter5/W
 ## Assignment 4: Exploring WordNet
 Jupyter Notebook and Comments about my observations can be found in this [PDF](https://github.com/tqyn117/NLP-Portfolio/blob/main/src/Chapter7/WordNet.pdf).
 
+## Assignment 5: N-Grams
+In this assignment, I worked together with my classmate [Brenden Healey](https://github.com/BrendenHealey/) to explore N-Grams and calculate the probability of a sentence being a certain language given a corpus of text. For this assignment, we used 3 different languages including English, French, and Italian. Each of these languages had its own corpus. The assignment consist of 2 programs, the [first program](https://github.com/tqyn117/NLP-Portfolio/blob/main/src/Chapter8/NGram_Part1.py) break down the corpus of each language, generating a set count of unigram and bigram. The [second program](https://github.com/tqyn117/NLP-Portfolio/blob/main/src/Chapter8/NGram_Part2.py) take those set count of unigram and bigram to calculate the probabily of a sentence being a certain language. 
+[Narrative](https://github.com/tqyn117/NLP-Portfolio/blob/main/src/Chapter8/NGram.pdf) for N-Grams based on what we learned from this assignment.

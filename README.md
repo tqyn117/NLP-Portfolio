@@ -26,3 +26,8 @@ Jupyter Notebook and Comments about my observations can be found in this [PDF](h
 In this assignment, I worked together with my classmate [Brenden Healey](https://github.com/BrendenHealey/) to explore N-Grams and calculate the probability of a sentence being a certain language given a corpus of text. For this assignment, we used 3 different languages including English, French, and Italian. Each of these languages had its own corpus. The assignment consist of 2 programs, the [first program](https://github.com/tqyn117/NLP-Portfolio/blob/main/src/Chapter8/NGram_Part1.py) break down the corpus of each language, generating a set count of unigram and bigram. The [second program](https://github.com/tqyn117/NLP-Portfolio/blob/main/src/Chapter8/NGram_Part2.py) take those set count of unigram and bigram to calculate the probabily of a sentence being a certain language. 
 
 [Narrative](https://github.com/tqyn117/NLP-Portfolio/blob/main/src/Chapter8/NGram.pdf) for N-Grams based on what we learned from this assignment.
+
+## Assignment 6: Building a Corpus
+In this assignment, I worked together with my classmate [Brenden Healey](https://github.com/BrendenHealey/) to build a corpus by creating a web crawler and scraper to create a knowledge base. For this assignment, our custom design for the web crawler is to crawl through 20 unique URLs (some have the same domain) using a queue, a starter URL, and each URL it crawls to will add 3 more URLs into the queue.
+
+The [program](https://github.com/tqyn117/NLP-Portfolio/blob/main/src/Chapter12/BuildCorpus.py) is consist of both the web crawler and scraper as well as the process to create a [knowledge base](https://github.com/tqyn117/NLP-Portfolio/blob/main/src/Chapter12/BuildingACorpus.pdf).
